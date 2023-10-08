@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button, Card, CardMedia, Typography, Link } from '@mui/material';
-import MovieAbout from './MovieAbout';
+// import MovieAbout from './MovieAbout';
 import { Info } from '@mui/icons-material';
 const MovieCard = ({ movie: { imdbID, Year, Poster, Title, Type } }) => {
 
