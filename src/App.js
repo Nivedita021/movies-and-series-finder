@@ -2,22 +2,22 @@ import React, { useState, useEffect } from "react";
 import MovieFilterIcon from '@mui/icons-material/MovieFilter';
 import MovieCard from "./MovieCard";
 import SearchIcon from '@mui/icons-material/Search';
+
 import "./App.css";
-import MovieAbout from "./MovieAbout";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import SearchAppBar from "./Appbarsearch";
+
 import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import { Search } from "@mui/icons-material";
 
 const API_URL = "https://www.omdbapi.com?apikey=b6003d8a";
 
 const App = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("Avengers");
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    searchMovies("Avengers");
-  }, []);
+    searchMovies(searchTerm);
+  }, [searchTerm]);
 
   const searchMovies = async (title) => {
     const response = await fetch(`${API_URL}&s=${title}`);
@@ -58,7 +58,7 @@ const App = () => {
           id="inputID"
         />
         <IconButton
-         onClick={() => searchMovies(searchTerm)}
+         
          size="large"
          edge="end"
          color="#5E029C"
