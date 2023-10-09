@@ -29,7 +29,7 @@ const MovieCard = ({ movie: { imdbID, Year, Poster, Title, Type } }) => {
   };
 
   return (
-    <Card sx={{ bgcolor: '#5E029C', m: 2 }}>
+    <Card sx={{ bgcolor: '#5E029C', m: 2, p: 2, display: 'flex'}}>
       <div className="movie" key={imdbID}>
 
         <div>
@@ -44,7 +44,7 @@ const MovieCard = ({ movie: { imdbID, Year, Poster, Title, Type } }) => {
 
           <Typography><span>{Type}</span></Typography>
 
-          <Typography variant='h3'>{Title}</Typography>
+          <Typography variant='h3' sx={{display: 'flex'}}>{Title}</Typography>
           <Button onClick={handleClick}><Info sx={{color: 'white'}}/></Button>
        {showSummary && <><Typography variant='body1' sx={{color: 'white'}}>Plot: {summary.Plot}</Typography>
        <Typography variant='subtitle' sx={{color: 'white', fontFamily:'cursive'}}>Actors: {summary.Actors}</Typography>
