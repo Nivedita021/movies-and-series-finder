@@ -59,9 +59,9 @@ const App = () => {
         />
         <IconButton
          
-         size="large"
+         size="medium"
          edge="end"
-         color="#5E029C"
+         color="#371250"
          
         >
 <SearchIcon/>
